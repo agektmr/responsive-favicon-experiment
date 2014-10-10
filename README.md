@@ -12,9 +12,9 @@ What I wanted to do:
 1. Prepare an `img` folder with multiple sized favicon images. Images should be preceded with `_16x16`, `_24x24`, `_32x32` respectively targeting on each device pixel ratio.
     - dpr = 1.0: `_16x16`  
       ex) `favicon_16x16.png`
-    - dpr = 1.5: `_24x24`.png
+    - dpr = 1.5: `_24x24`.png  
       ex) `favicon_24x24.png`
-    - dpr = 2.0: `_32x32`.png
+    - dpr = 2.0: `_32x32`.png  
       ex) `favicon_32x32.png`
 
 2. Define base url for a favicon so it will be replaced with relevant image url
