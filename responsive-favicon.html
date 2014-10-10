@@ -1,0 +1,29 @@
+<script>
+var proto = Object.create(HTMLLinkElement.prototype);
+proto.createdCallback = function() {
+  var base = this.getAttribute('href') || '';
+  var size = '_16x16';
+  if (window.devicePixelRatio) {
+    switch (window.devicePixelRatio) {
+      case 1:
+        size = '_16x16';
+        break;
+      case 1.5:
+        size = '_24x24';
+        break;
+      case 2:
+      default:
+        size = '_32x32';
+        break;
+    }
+    var url = base.replace(/(_[0-9]+x[0-9]+\.|\.)(.{3,4}?)$/, size+'.$2')
+    this.setAttribute('href', url);
+  }
+  this.setAttribute('rel', 'icon');
+};
+
+document.registerElement('responsive-favicon', {
+  prototype: proto,
+  extends: 'link'
+});
+</script>
